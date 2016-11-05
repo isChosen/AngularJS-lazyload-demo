@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<title>AngularJS-懒加载模块-demo</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body ng-controller="mainCtrl">
+	<header ng-bind="insx.title"></header>
+	<section lazy-container>
+		<ul class="itl">
+			<li ng-repeat="item in items">
+				<img lazy-src="{{item.imgUrl}}" title="{{item.title}}" />
+			</li>
+		</ul>
+	</section>
+	<footer>{{insx.tab}}</footer>
+	
+	<!-- 引入需要依赖的模块和脚本 -->
+	<script src="libs/angular.min.js"></script>
+	<script src="libs/me-lazyimg.js"></script>
+	<script src="js/my-service.js"></script>
+	<script src="js/my-controller.js"></script>
+	<!-- me-lazyimg.js的用法详见本github中的me-lazyimg -->
+</body>
+</html>
